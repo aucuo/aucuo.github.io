@@ -1,0 +1,40 @@
+
+.header {
+    z-index: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 20px 0 auto;
+
+    @media (max-width: 768px) {
+        position: fixed;
+        inset: auto 0 20px;
+    }
+
+    .nav {
+        padding: 5px;
+        background-color: var(--color-transparent-white);
+        backdrop-filter: blur(10px) brightness(.2);
+        border-radius: 90px;
+        overflow: hidden;
+
+        @media (max-width: 768px) {
+            backdrop-filter: blur(4px) brightness(.1);
+        }
+
+        &__list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+
+            @media (max-width: 768px) {
+                gap: 8px;
+            }
+        }
+
+        &__item {
+        }
+    }
+}

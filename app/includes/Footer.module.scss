@@ -1,0 +1,31 @@
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    font-size: 14px;
+    padding: 40px 0 120px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__copyright {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__socials {
+        display: flex;
+        gap: 40px;
+
+        @media (max-width: 768px) {
+            gap: 20px;
+        }
+    }
+}
