@@ -1,13 +1,14 @@
 // ./app/Header.tsx
 
-'use client' // <-- добавь эту строку в самое начало файла
+'use client'
 
-import Badge from "../components/Badge";
-import Button from "../components/Button";
+import Badge from "@/app/components/Badge";
+import Button from "@/app/components/Button";
 import styles from './Header.module.scss';
-import btnStyles from '../components/Button.module.scss';
-import { useActiveSection } from "../hooks/useActiveSection";
-import { projects } from "../data/projects";
+import { useActiveSection } from "@/app/hooks/useActiveSection";
+import { projects } from "@/app/data/projects";
+import { useCursor } from "@/app/context/CursorContext";
+import { motion } from 'framer-motion';
 
 const sectionIds = ['main', 'projects', 'about', 'contact'];
 
@@ -21,7 +22,7 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children, isActive }) => {
     return (
         <Button
             href={to}
-            className={`${isActive ? btnStyles[`btn--variant-primary`] : ''}`}
+            variant={isActive ? 'primary' : 'transparent'}
         >
             {children}
         </Button>
@@ -31,34 +32,68 @@ const NavLink: React.FC<NavLinkProps> = ({ to, children, isActive }) => {
 export default function Header() {
     const activeSection = useActiveSection(sectionIds);
     const totalProjects = projects.length;
+    const { setCursorVisible } = useCursor();
+
+    const handleMouseEnter = () => {
+        setCursorVisible(false);
+    };
+
+    const handleMouseLeave = () => {
+        setCursorVisible(true);
+    };
+
+    const headerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
+    const navItemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+        },
+    };
 
     return (
-        <header className={styles['header']}>
+        <motion.header
+            className={styles['header']}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            variants={headerVariants}
+            initial="hidden"
+            animate="visible"
+        >
             <nav className={styles['nav']}>
-                <ul className={styles['nav__list']}>
-                    <li className={styles['nav__item']}>
+                <motion.ul className={styles['nav__list']} variants={headerVariants}>
+                    <motion.li className={styles['nav__item']} variants={navItemVariants}>
                         <NavLink to="#main" isActive={activeSection === 'main'}>
                             Main
                         </NavLink>
-                    </li>
-                    <li className={styles['nav__item']}>
+                    </motion.li>
+                    <motion.li className={styles['nav__item']} variants={navItemVariants}>
                         <NavLink to="#projects" isActive={activeSection === 'projects'}>
                             <Badge>{totalProjects}</Badge>
                             Projects
                         </NavLink>
-                    </li>
-                    <li className={styles['nav__item']}>
+                    </motion.li>
+                    <motion.li className={styles['nav__item']} variants={navItemVariants}>
                         <NavLink to="#about" isActive={activeSection === 'about'}>
                             About
                         </NavLink>
-                    </li>
-                    <li className={styles['nav__item']}>
+                    </motion.li>
+                    <motion.li className={styles['nav__item']} variants={navItemVariants}>
                         <NavLink to="#contact" isActive={activeSection === 'contact'}>
                             Contact
                         </NavLink>
-                    </li>
-                </ul>
+                    </motion.li>
+                </motion.ul>
             </nav>
-        </header>
+        </motion.header>
     );
 }

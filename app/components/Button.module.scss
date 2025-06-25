@@ -23,7 +23,7 @@
         padding: 0 14px;
     }
 
-    &:disabled {
+    &:disabled, &[aria-disabled="true"] {
         cursor: not-allowed;
         opacity: .6;
     }
@@ -51,6 +51,11 @@
     &--variant-secondary {
         background-color: var(--color-transparent-white);
         color: var(--color-white);
+    }
+
+    &--variant-transparent {
+        background-color: transparent;
+        color: var(--color-gray);
     }
 
     &--size-small {

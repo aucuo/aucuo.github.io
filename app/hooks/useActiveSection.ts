@@ -1,18 +1,32 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export function useActiveSection(sectionIds: string[]) {
     const [activeSection, setActiveSection] = useState<string>('');
+    const rootRef = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
+                const isBottom =
+                    window.innerHeight + window.scrollY >=
+                    document.documentElement.scrollHeight - 50;
+
+                if (isBottom) {
+                    setActiveSection('contact');
+                    return;
+                }
+
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         setActiveSection(entry.target.id);
                     }
                 });
             },
-            { threshold: 0.6 }
+            {
+                root: rootRef.current,
+                rootMargin: '-50% 0px -50% 0px',
+                threshold: 0,
+            }
         );
 
         const sections = sectionIds.map((id) => {
