@@ -5,6 +5,7 @@ import CustomCursor from "@/app/components/CustomCursor";
 import { CursorProvider } from "@/app/context/CursorContext";
 import {GoogleAnalytics} from "@next/third-parties/google";
 import Script from 'next/script';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const labilGrotesk = localFont({
   src: [
@@ -111,6 +112,7 @@ export default function RootLayout({
         </CursorProvider>
       </body>
       <GoogleAnalytics gaId="G-MVS6RQSBLG" />
+      <SpeedInsights />
     </html>
   );
 }
