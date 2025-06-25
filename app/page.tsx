@@ -107,7 +107,7 @@ export default function Home() {
                         About
                     </h2>
                     <p className={styles.about__text}>
-                        &quot;Hi, I&apos;m Jahor Šykaviec (aucuo) — a web developer with over five years of professional
+                        &quot;Hi, I&apos;m Jahor Šykaviec (aucuo) — a web developer with over three years of professional
                         experience
                         building websites and digital products that make an impact. I&apos;ve contributed to a variety of
                         projects, including large-scale solutions that received media coverage and reached wide
