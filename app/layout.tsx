@@ -16,8 +16,14 @@ const labilGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Jahor Šykaviec (aucuo) | Web Developer Portfolio",
-  description: "A web developer with over five years of professional experience building websites and digital products that make an impact.",
+  title: "aucuo (Jahor Šykaviec) | Web Developer",
+  description: "A web developer with over three years of professional experience building websites and digital products.",
+  icons: {
+    icon: '/assets/fav/favicon-32x32.png',
+    shortcut: '/assets/fav/favicon-16x16.png',
+    apple: '/assets/fav/apple-touch-icon.png',
+  },
+  manifest: '/assets/fav/site.webmanifest',
 };
 
 export default function RootLayout({
