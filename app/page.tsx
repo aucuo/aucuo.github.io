@@ -90,7 +90,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
             >
                 <Marquee className={styles.marquee}>
-                    <span className={styles.marquee_text}>let's make web better</span>
+                    <span className={styles.marquee_text}>let&apos;s make web better</span>
                 </Marquee>
             </motion.div>
             <Container>

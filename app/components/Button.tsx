@@ -37,16 +37,14 @@ export default function Button({
 
     // Type guard: if 'href' is present, it's a link.
     if ('href' in props) {
-        // For links, 'disabled' is not a native attribute.
-        // We use 'aria-disabled' for accessibility and prevent clicks.
-        const { disabled, ...linkProps } = props;
-
+        // Для <a> явно указываем только допустимые пропсы
+        const { disabled, onClick, href } = props;
         return (
             <a
-                {...linkProps}
+                href={href}
                 className={buttonClasses}
                 aria-disabled={disabled}
-                onClick={disabled ? (e) => e.preventDefault() : props.onClick}
+                onClick={disabled ? (e) => e.preventDefault() : (onClick as React.MouseEventHandler<HTMLAnchorElement>)}
             >
                 {children}
             </a>
