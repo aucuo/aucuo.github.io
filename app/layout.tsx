@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './styles/globals.scss';
 import CustomCursor from "@/app/components/CustomCursor";
 import { CursorProvider } from "@/app/context/CursorContext";
+import {GoogleAnalytics} from "@next/third-parties/google";
 
 const labilGrotesk = localFont({
   src: [
@@ -39,6 +40,7 @@ export default function RootLayout({
           {children}
         </CursorProvider>
       </body>
+      <GoogleAnalytics gaId="G-MVS6RQSBLG" />
     </html>
   );
 }
