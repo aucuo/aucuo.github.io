@@ -31,7 +31,7 @@ export default function Footer() {
                 <a href="https://www.instagram.com/aucuo/" target="_blank" rel="noopener noreferrer">
                     Instagram
                 </a>
-                <a href="https://www.linkedin.com/in/jahor-%C5%A1ykaviec-360762174/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/aucuo/" target="_blank" rel="noopener noreferrer">
                     LinkedIn
                 </a>
                 <a href="https://github.com/aucuo" target="_blank" rel="noopener noreferrer">

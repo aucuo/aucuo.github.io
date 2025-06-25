@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aucuo.vercel.app/sitemap.xml 
