@@ -63,9 +63,9 @@ export default function Home() {
                     </div>
                 </motion.div>
                 <div className={styles.projects} id="projects">
-                    {projects.map((project, index) => (
+                    {projects.slice().reverse().map((project, index) => (
                         <motion.div
-                            key={project.id}
+                            key={project.title + index}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ amount: 0.2 }}
@@ -107,11 +107,11 @@ export default function Home() {
                         About
                     </h2>
                     <p className={styles.about__text}>
-                        "Hi, I`m Jahor Šykaviec (aucuo) — a web developer with over five years of professional
+                        &quot;Hi, I&apos;m Jahor Šykaviec (aucuo) — a web developer with over five years of professional
                         experience
-                        building websites and digital products that make an impact. I've contributed to a variety of
+                        building websites and digital products that make an impact. I&apos;ve contributed to a variety of
                         projects, including large-scale solutions that received media coverage and reached wide
-                        audiences."
+                        audiences.&quot;
                     </p>
                 </motion.div>
                 <motion.div
@@ -124,7 +124,7 @@ export default function Home() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <h2 className={styles.talk__title}>
-                        Let's talk!
+                        Let&apos;s talk!
                     </h2>
                     <Button href="https://t.me/aucuo" target="_blank" className={styles.talk__btn} variant={'secondary'} size={'large'}>
                         @aucuo
