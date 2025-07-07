@@ -35,4 +35,16 @@ export const projects = [
         image: '/assets/projects/proj6.jpg',
         href: 'https://rim.kz/',
     },
+    {
+        title: 'Francheese',
+        description: 'Design development and front-end creation for a franchise selection website.',
+        image: '/assets/projects/proj7.jpg',
+        href: 'https://francheese.by/',
+    },
+    {
+        title: 'Brightscope',
+        description: 'Front-end redesign of BrightScope’s website — a provider of HR analytics and salary benchmarking.',
+        image: '/assets/projects/proj8.jpg',
+        href: 'https://brightscope.io/?lang=en',
+    },
 ];
