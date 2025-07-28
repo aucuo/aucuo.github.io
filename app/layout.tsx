@@ -31,12 +31,16 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: {
-    icon: '/assets/fav/favicon-32x32.png',
-    shortcut: '/assets/fav/favicon-16x16.png',
-    apple: '/assets/fav/apple-touch-icon.png',
+  icons: [
+    { rel: "icon", type: "image/png", sizes: "96x96", url: "/assets/fav/favicon-96x96.png" },
+    { rel: "icon", type: "image/svg+xml", url: "/assets/fav/favicon.svg" },
+    { rel: "shortcut icon", url: "/assets/fav/favicon.ico" },
+    { rel: "apple-touch-icon", sizes: "180x180", url: "/assets/fav/apple-touch-icon.png" },
+  ],
+  manifest: "/assets/fav/site.webmanifest",
+  other: {
+    "apple-mobile-web-app-title": "aucuo"
   },
-  manifest: '/assets/fav/site.webmanifest',
   openGraph: {
     type: 'website',
     locale: 'en_US',
