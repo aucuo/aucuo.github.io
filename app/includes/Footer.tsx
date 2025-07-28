@@ -16,9 +16,9 @@ export default function Footer() {
             className={styles.footer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             variants={animationVariants}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0 }}
         >
             <div className={styles.footer__copyright}>
                 {new Date().getFullYear()} ©

@@ -43,7 +43,7 @@ export default function Home() {
                     id="main"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     variants={heroContainerVariants}
                 >
                     <motion.div variants={heroItemVariants}>
@@ -68,7 +68,7 @@ export default function Home() {
                             key={project.title + index}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ amount: 0.2 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             variants={animationVariants}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                         >
@@ -85,7 +85,7 @@ export default function Home() {
             <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.2 }}
+                viewport={{ once: true, amount: 0.2 }}
                 variants={animationVariants}
                 transition={{ duration: 0.5, delay: 0.2 }}
             >
@@ -99,7 +99,7 @@ export default function Home() {
                     id="about"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     variants={animationVariants}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
@@ -119,7 +119,7 @@ export default function Home() {
                     id="contact"
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     variants={animationVariants}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
